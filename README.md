@@ -30,4 +30,4 @@ Make sure your image has front facing faces, otherwise the program will exit imm
 
 Finally, there's a YouTube video to go along with this repo, walking through the whole thing here:
 
-[![DEAL WITH IT PYTHON](https://i.ytimg.com/vi_webp/eVhE8ioH1kw/sddefault.webp)](https://www.youtube.com/watch?v=eVhE8ioH1kw)
+[![DEAL WITH IT PYTHON](https://github.com/burningion/automatic-memes/blob/master/images/deal_youtube.png?raw=true)](https://www.youtube.com/watch?v=eVhE8ioH1kw)
