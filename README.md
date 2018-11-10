@@ -34,9 +34,9 @@ Finally, there's a YouTube video to go along with this repo, walking through the
 
 ### Docker
 
-Assuming you have a file `someimage.jpg`
+Assuming you have a file `someimage.jpg` and want some output image: `output.gif`
 
 ```
 docker build ./ -t genimage
-docker run  -v "$(pwd)/:/data" genimage python3 /app/generate_gif.py -image /data/someimage.jpg
+docker run  -v "$(pwd)/:/data" genimage python3 /app/generate_gif.py -image /data/someimage.jpg -out /data/output.gif
 ```

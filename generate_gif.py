@@ -9,6 +9,7 @@ import moviepy.editor as mpy
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-image", required=True, help="path to input image")
+parser.add_argument("-out", required=False, default="deal.gif", help="path to output image 'deal.gif'")
 args = parser.parse_args()
 
 detector = dlib.get_frontal_face_detector()
@@ -58,9 +59,9 @@ for rect in rects:
     rightEyeCenter = rightEye.mean(axis=0).astype("int")
 
 	# compute the angle between the eye centroids
-    dY = leftEyeCenter[1] - rightEyeCenter[1] 
+    dY = leftEyeCenter[1] - rightEyeCenter[1]
     dX = leftEyeCenter[0] - rightEyeCenter[0]
-    angle = np.rad2deg(np.arctan2(dY, dX)) 
+    angle = np.rad2deg(np.arctan2(dY, dX))
 
     # resize glasses to fit face width
     current_deal = deal.resize((shades_width, int(shades_width * deal.size[1] / deal.size[0])),
@@ -98,4 +99,4 @@ def make_frame(t):
     return np.asarray(draw_img)
 
 animation = mpy.VideoClip(make_frame, duration=duration)
-animation.write_gif("deal.gif", fps=4)
+animation.write_gif(args.out, fps=4)
