@@ -1,7 +1,7 @@
-FROM python:stretch
+FROM  valian/docker-python-opencv-ffmpeg:py3
 
-RUN app-get install cmake
-RUN pip3 install Pillow MoviePy NumPy opencv-python dlib imutils requests
+RUN pip3 install dlib imutils requests Pillow MoviePy NumPy opencv-python
 
+ADD . /app
 
-CMD [python3 generate_gif.py -image]
+CMD [python3 /app/generate_gif.py]
